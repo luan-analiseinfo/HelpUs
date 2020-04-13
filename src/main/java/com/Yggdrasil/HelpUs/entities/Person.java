@@ -1,11 +1,13 @@
 package com.Yggdrasil.HelpUs.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public abstract class Person implements Serializable{
@@ -18,6 +20,8 @@ public abstract class Person implements Serializable{
 	private String cpf;
 	private String email;
 	private String telefone;
+	@OneToMany
+	private List<Contract> termosDeContrato;
 	
 	public Person() {
 	}
@@ -71,9 +75,14 @@ public abstract class Person implements Serializable{
 		this.telefone = telefone;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public List<Contract> getTermosDeContrato() {
+		return termosDeContrato;
 	}
+
+	public void setTermosDeContrato(List<Contract> termosDeContrato) {
+		this.termosDeContrato = termosDeContrato;
+	}
+
 
 	@Override
 	public int hashCode() {
