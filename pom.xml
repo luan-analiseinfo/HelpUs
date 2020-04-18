@@ -17,6 +17,9 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<version.commons.beanutils>1.8.3</version.commons.beanutils>
+		<version.apache.commons.lang>3.5</version.apache.commons.lang>
+		
 	</properties>
 
 	<dependencies>
@@ -51,6 +54,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>${version.commons.beanutils}</version>
+		</dependency>
+		
 
 	</dependencies>
 
