@@ -1,9 +1,10 @@
-package com.Yggdrasil.HelpUs.converters;
+package com.Yggdrasil.HelpUs.converters.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
 import org.apache.commons.beanutils.BeanUtils;
 import com.Yggdrasil.HelpUs.PersonDTO;
+import com.Yggdrasil.HelpUs.converters.Converter;
 import com.Yggdrasil.HelpUs.entities.Person;
 
 public class PersonConverter implements Converter<Person, PersonDTO>{
@@ -17,7 +18,6 @@ public class PersonConverter implements Converter<Person, PersonDTO>{
 			e.printStackTrace();
 		}
 		return p;
-
 	}
 
 	@Override
