@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public abstract class Person implements Serializable{
+public  class Person implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -21,7 +21,7 @@ public abstract class Person implements Serializable{
 	private String email;
 	private String telefone;
 	@OneToMany
-	private List<Contract> termosDeContrato;
+	private List<Contract> contrato;
 	
 	public Person() {
 	}
@@ -76,11 +76,11 @@ public abstract class Person implements Serializable{
 	}
 
 	public List<Contract> getTermosDeContrato() {
-		return termosDeContrato;
+		return contrato;
 	}
 
 	public void setTermosDeContrato(List<Contract> termosDeContrato) {
-		this.termosDeContrato = termosDeContrato;
+		this.contrato = termosDeContrato;
 	}
 
 
