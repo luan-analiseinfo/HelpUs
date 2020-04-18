@@ -18,4 +18,8 @@ public class PersonService {
 		Optional<Person> obj = repo.findById(id);
 		return obj.orElse(null);
 	}
+
+	public Person save(Person pessoa) {
+		return repo.save(pessoa);
+	}
 }

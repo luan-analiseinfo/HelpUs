@@ -3,6 +3,7 @@ package com.Yggdrasil.HelpUs.resources;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,15 @@ public class PersonResource {
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Integer id) {
 		Person obj = service.buscar(id);
+		System.out.println(obj.getName());
+	
+		return ResponseEntity.ok().body(obj);	
+   }
+	
+	
+	@RequestMapping(method=RequestMethod.POST)
+	public ResponseEntity<?> save(@RequestBody Person pessoa) {
+		Person obj = service.save(pessoa);
 		System.out.println(obj.getName());
 	
 		return ResponseEntity.ok().body(obj);	
