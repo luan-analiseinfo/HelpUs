@@ -4,23 +4,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Yggdrasil.HelpUs.entities.Contract;
-import com.Yggdrasil.HelpUs.services.ContractService;
+import com.Yggdrasil.HelpUs.entities.Servico;
+import com.Yggdrasil.HelpUs.services.ServicoService;
 
 @RestController
-@RequestMapping(value = "/contratos")
-public class ContractResource {
+@RequestMapping(value = "/servicos")
+public class ServicoResource {
 	
 	@Autowired
-	private ContractService service;
-
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public ServicoService service;
+	
 	public ResponseEntity<?> find(@PathVariable Integer id){
-		Contract obj = service.buscar(id);
+		Servico  obj = service.buscar(id);
 		return ResponseEntity.ok().body(obj);
-		
-	}
+		}
+
 }

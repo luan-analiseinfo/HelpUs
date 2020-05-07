@@ -1,6 +1,9 @@
 package com.Yggdrasil.HelpUs.entities;
 
-public class Client extends Person {
+import javax.persistence.Entity;
+
+@Entity
+public class Cliente extends Pessoa {
 	private static final long serialVersionUID = 1L;
 
 }

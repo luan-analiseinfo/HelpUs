@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Yggdrasil.HelpUs.PersonDTO;
-import com.Yggdrasil.HelpUs.converters.impl.PersonConverter;
-import com.Yggdrasil.HelpUs.entities.Person;
-import com.Yggdrasil.HelpUs.exception.NotImplementation;
-import com.Yggdrasil.HelpUs.services.PersonService;
+import com.Yggdrasil.HelpUs.converters.impl.PessoaConverter;
+import com.Yggdrasil.HelpUs.entities.Pessoa;
+import com.Yggdrasil.HelpUs.exceptions.NotImplementation;
+import com.Yggdrasil.HelpUs.services.PessoaService;
 
 
 
 
 @RestController
 @RequestMapping(value = "/pessoas")
-public class PersonResource implements ApiREST<PersonDTO>{
+public class PessoaResource implements ApiREST<PersonDTO>{
 
 	@Autowired
-	private PersonService service;
+	private PessoaService service;
 	
 
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Integer id) {
-		Person obj = service.buscar(id);
+		Pessoa obj = service.buscar(id);
 		return ResponseEntity.ok().body(obj);	
    }
 	
@@ -39,9 +39,9 @@ public class PersonResource implements ApiREST<PersonDTO>{
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<?> save(@RequestBody PersonDTO pessoaDTO) {
-		PersonConverter converter = new PersonConverter();
-		Person person = converter.toEntidade(pessoaDTO);
-		Person obj = service.save(person);
+		PessoaConverter converter = new PessoaConverter();
+		Pessoa pessoa = converter.toEntity(pessoaDTO);
+		Pessoa obj = service.salvar(pessoa);
 		return ResponseEntity.ok().body(obj);	
    }
 

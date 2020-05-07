@@ -3,9 +3,9 @@ package com.Yggdrasil.HelpUs.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.Yggdrasil.HelpUs.entities.Person;
+import com.Yggdrasil.HelpUs.entities.Contrato;
 
 @Repository
-public interface PersonRepository extends JpaRepository<Person, Integer>{
+public interface ContratoRepository extends JpaRepository<Contrato, Integer>{
 
 }

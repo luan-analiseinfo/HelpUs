@@ -5,13 +5,13 @@ import java.lang.reflect.InvocationTargetException;
 import org.apache.commons.beanutils.BeanUtils;
 import com.Yggdrasil.HelpUs.PersonDTO;
 import com.Yggdrasil.HelpUs.converters.Converter;
-import com.Yggdrasil.HelpUs.entities.Person;
+import com.Yggdrasil.HelpUs.entities.Pessoa;
 
-public class PersonConverter implements Converter<Person, PersonDTO>{
+public class PessoaConverter implements Converter<Pessoa, PersonDTO>{
 
 	@Override
-	public Person toEntidade(PersonDTO dto) {
-		Person p = new Person();
+	public Pessoa toEntity(PersonDTO dto) {
+		Pessoa p = new Pessoa();
 		try {
 			BeanUtils.copyProperties(p, dto);
 		} catch (IllegalAccessException | InvocationTargetException e) {
@@ -21,7 +21,7 @@ public class PersonConverter implements Converter<Person, PersonDTO>{
 	}
 
 	@Override
-	public PersonDTO toDto(Person entidade) {
+	public PersonDTO toDto(Pessoa entidade) {
 		PersonDTO dto = new PersonDTO();
 		try {
 			BeanUtils.copyProperties(entidade, dto);

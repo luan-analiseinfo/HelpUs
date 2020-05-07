@@ -1,4 +1,4 @@
-package com.Yggdrasil.HelpUs.exception;
+package com.Yggdrasil.HelpUs.exceptions;
 
 public class NotImplementation extends RuntimeException{
 

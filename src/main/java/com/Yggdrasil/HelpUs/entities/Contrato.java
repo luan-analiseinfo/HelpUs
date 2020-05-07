@@ -13,7 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Contract implements Serializable {
+public class Contrato implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -22,17 +22,17 @@ public class Contract implements Serializable {
 	private Calendar dataInicio;
 	private Calendar datafim;
 	private Double valor;
-	private Person contratante;
-	private Person contratado;
+	private Pessoa contratante;
+	private Pessoa contratado;
 	
 	@ElementCollection	
 	private List<String> termosDeContrato;
 	
-	public Contract() {
+	public Contrato() {
 	}
 
-	public Contract(Integer id, Calendar dataInicio, Calendar datafim, Double valor, Person contratante,
-			Person contratado) {
+	public Contrato(Integer id, Calendar dataInicio, Calendar datafim, Double valor, Pessoa contratante,
+			Pessoa contratado) {
 		super();
 		this.id = id;
 		this.dataInicio = dataInicio;
@@ -74,19 +74,19 @@ public class Contract implements Serializable {
 		this.valor = valor;
 	}
 
-	public Person getContratante() {
+	public Pessoa getContratante() {
 		return contratante;
 	}
 
-	public void setContratante(Person contratante) {
+	public void setContratante(Pessoa contratante) {
 		this.contratante = contratante;
 	}
 
-	public Person getContratado() {
+	public Pessoa getContratado() {
 		return contratado;
 	}
 
-	public void setContratado(Person contratado) {
+	public void setContratado(Pessoa contratado) {
 		this.contratado = contratado;
 	}
 
@@ -118,7 +118,7 @@ public class Contract implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Contract other = (Contract) obj;
+		Contrato other = (Contrato) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

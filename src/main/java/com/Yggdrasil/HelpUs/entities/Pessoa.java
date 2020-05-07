@@ -10,26 +10,26 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public  class Person implements Serializable{
+public  class Pessoa implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String name;
+	private String nome;
 	private String cpf;
 	private String email;
 	private String telefone;
 	@OneToMany
-	private List<Contract> contrato;
+	private List<Contrato> contrato;
 	
-	public Person() {
+	public Pessoa() {
 	}
 
-	public Person(Integer id, String name, String cpf, String email, String telefone) {
+	public Pessoa(Integer id, String nome, String cpf, String email, String telefone) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
 		this.telefone = telefone;
@@ -43,12 +43,12 @@ public  class Person implements Serializable{
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getCpf() {
@@ -75,11 +75,11 @@ public  class Person implements Serializable{
 		this.telefone = telefone;
 	}
 
-	public List<Contract> getTermosDeContrato() {
+	public List<Contrato> getTermosDeContrato() {
 		return contrato;
 	}
 
-	public void setTermosDeContrato(List<Contract> termosDeContrato) {
+	public void setTermosDeContrato(List<Contrato> termosDeContrato) {
 		this.contrato = termosDeContrato;
 	}
 
@@ -91,7 +91,7 @@ public  class Person implements Serializable{
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((telefone == null) ? 0 : telefone.hashCode());
 		return result;
 	}
@@ -104,7 +104,7 @@ public  class Person implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Person other = (Person) obj;
+		Pessoa other = (Pessoa) obj;
 		if (cpf == null) {
 			if (other.cpf != null)
 				return false;
@@ -120,10 +120,10 @@ public  class Person implements Serializable{
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (name == null) {
-			if (other.name != null)
+		if (nome == null) {
+			if (other.nome != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!nome.equals(other.nome))
 			return false;
 		if (telefone == null) {
 			if (other.telefone != null)
